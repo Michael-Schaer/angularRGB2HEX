@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="converterApp">
+<head>
+<meta charset="utf-8">
+<title>Hello AngularJS - Hello World</title>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script	src="https://code.angularjs.org/1.4.1/angular.min.js"></script>
+<script src="./main.js"></script>
+<link rel="stylesheet" href="./main.css">
+</head>
+<body ng-controller="converter" style="background-color:{{getColor()}}">
+	<div class="container">
+		<div style="padding-top: 30px">
+			<div style="padding: 0px 0px 20px 30px">
+				<h1>RGB to HEX</h1>
+			</div>
+			<spacer type="vertical">&nbsp;</spacer>
+			<form class="form-horizontal" role="form" method="post" action="#">
+				<div class="form-group">
+					<label class="col-md-1 control-label">Red</label>
+					<div class="col-md-3">
+						<div slider config="sliderConfig" model="red" class="cdbl-slider"></div> 
+					</div>
+					<label class="col-md-1 colorValue">{{red}}</label>
+				</div>	
+				<div class="form-group">	
+					<label class="col-md-1 control-label">Green</label>
+					<div class="col-md-3">
+						<div slider config="sliderConfig" model="green" class="cdbl-slider"></div>
+					</div>
+					<label class="col-md-3 colorValue">{{green}}</label>
+				</div>
+				<div class="form-group">	
+					<label class="col-md-1 control-label">Blue</label>
+					<div class="col-md-3">
+						<div slider config="sliderConfig" model="blue" class="cdbl-slider"></div>
+					</div>
+					<label class="col-md-1 colorValue">{{blue}}</label>
+				</div>
+				<spacer type="vertical">&nbsp;</spacer>
+				<div class="form-group">	
+					<label class="col-md-1 control-label">HEX</label>
+					<div class="col-md-3">
+						<input type="text" value="{{getColor()}}" readonly/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>	
